@@ -1,4 +1,4 @@
-import utils.constans as const
+import utils.constants as const
 import math
 class Subject:
     #every subject have a fixed sized list
@@ -8,12 +8,22 @@ class Subject:
         self.x_value = self.__get_x_value()
         self.fitness = self.__fitness()
     
+    # GET AREA
+    def get_bit_list(self):
+        return self.bit_list
+    def get_value(self):
+        return self.value
+    def get_x_value(self):
+        return self.x_value
+    def get_fitness(self):
+        return self.fitness
+    # END AREA
 
     """
         Use the @bit_list to get the decimal representation
         @Return: decimal int
     """
-    def __decimal_value(self):
+    def __get_decimal_value(self):
         bit_string = ''.join(str(h) for h in self.bit_list)
         return int(bit_string,2)
     
@@ -30,7 +40,8 @@ class Subject:
     
     """
         The fitness function used is the same function that we are trying to minimize.
-        The function can be found at resource\Especificacao.pdf on page 1 (f(x)=cos(x)*x+2)
+        The function can be found at resource\Especificacao.pdf on page 1 (f(x)=cos(x)*x+2).
+        Less is better
         @Return: float value
     """
     def __fitness(self):
