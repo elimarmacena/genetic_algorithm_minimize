@@ -24,8 +24,18 @@ class Lab:
 
         self.mutated_population = list()
         seed(21)
+    # GET AREA
     def get_init_population(self):
         return self.init_population
+    def get_current_population(self):
+        return self.current_population
+    def get_selected_population(self):
+        return self.selected_population
+    def get_crossover_population(self):
+        return self.crossover_population
+    def get_mutated_population(self):
+        return self.mutated_population
+    # END AREA
     """
         The asked selection was with 2  subjects, but the number of subjects can be
         send as parameter
@@ -119,7 +129,7 @@ class Lab:
         @Return: Subject
     """
     def get_best_fitness(self):
-        return self.current_population[1]
+        return self.current_population[0]
 
     """
         function used to create a randomic population of @size_population subjects
