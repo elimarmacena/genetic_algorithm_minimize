@@ -14,16 +14,16 @@ Para que seja possivel a implementaçãode um algoritmo génetico é necessario 
 
 Aplicando os requisitos expostos, é possivel realizar a construção do algortimo utilizando o fluxo apresentado na imagem a seguir
 
-![Fluxo Algortimo](https://github.com/elimarmacena/genetic_algorithm_minimize/blob/main/resource/Image/fluxo_algoritmo.png)
+![Fluxo Algortimo](/resource/Image/fluxo_algoritmo.png)
 
 ## Problema Proposto
 O algoritmo deve ser capz de minimizar o valor da função a seguir através do parametro X.
 
-### f(x) = cos(x) * x +2
+![Função](/resource/Image/eq_problem.png)
 
 A imagem a seguir atras a representação grafica da função exposta.
 
-![Grafico Funcao](https://github.com/elimarmacena/genetic_algorithm_minimize/blob/main/resource/Image/graph_function.png)
+![Grafico Funcao](/resource/Image/graph_function.png)
 
 ## Solução
 
@@ -47,6 +47,26 @@ A execução do presente codigo resulta em 2 tipos de saidas, ambos os tipos est
 
 #### Indivíduo (Subject)
 
+![Indivíduo da População](/resource/Image/subject_class.png)
+
 #### Geração (Lab)
+
+![População e Operadores](/resource/Image/lab_class.png)
+
+##### Seleção
+
+![Seleção de Indivíduos](/resource/Image/selection_method.png)
+
+##### Crossover
+
+![Crossover de Indivíduos](/resource/Image/crossover_method.png)
+
+##### Mutação
+
+![Mutação de Indivíduos](/resource/Image/mutation_method.png)
+
+##### Nova Geração
+
+![Nova Geração](/resource/Image/newgen_method.png)
 
 #### Arquivo da Aplicação(Main)

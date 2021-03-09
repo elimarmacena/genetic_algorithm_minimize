@@ -2,7 +2,7 @@ import utils.constants as const
 from random import seed
 from random import randint
 
-seed(21)
+seed(const.USED_SEED)
 """
     function used to create a randomic N bits list
     @Return: list of 0's and 1's
