@@ -24,3 +24,29 @@ O algoritmo deve ser capz de minimizar o valor da função a seguir através do 
 A imagem a seguir atras a representação grafica da função exposta.
 
 ![Grafico Funcao](https://github.com/elimarmacena/genetic_algorithm_minimize/blob/main/resource/Image/graph_function.png)
+
+## Solução
+
+### Linguagem Utilizada
+
+Para a solução do problema proposto foi utilizada a linguagem Python, versão 3.8.7.
+
+### Execução Codigo
+
+PLACE HOLDER --- COLOCAR INFORMAÇÃO DE EXECUCAO
+
+#### Alteração de Parametros
+
+Os parametros utilizados em cada uma das funções requisito para o algortimo genetico ([requisitos](https://github.com/elimarmacena/genetic_algorithm_minimize#o-algoritmo)) pode ser alteradas no arquivo ```src\utils\constants.py```, alem desses parametros, tambem é possivel alterar o tamanho da população e tambem o seed utilizado para os numeros randomicos.
+
+### Saida Esperada
+
+A execução do presente codigo resulta em 2 tipos de saidas, ambos os tipos estaram disponibilizadas na pasta ```output```. Primeiro teremos um arquivo do tipo csv com a medida das dez execuções de cada intervalo de geração solicitada, depois teremos a saida para cada execução realiazada em uma geração, exemplo: ```10gen_it1_gen1.csv```. 
+
+### Implementação
+
+#### Indivíduo (Subject)
+
+#### Geração (Lab)
+
+#### Arquivo da Aplicação(Main)
