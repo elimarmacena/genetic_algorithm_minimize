@@ -47,9 +47,25 @@ A execução do presente codigo resulta em 2 tipos de saidas, ambos os tipos est
 
 #### Indivíduo (Subject)
 
+Cada indivíduo presente na população é representado por um objeto do tipo **Subject**, como é mostrado na imagem a seguir, esse objeto possui 4 atributos, todos eles calculados no momento de sua criação.
+
 ![Indivíduo da População](/resource/Image/subject_class.png)
 
+O atributo **bit_list** é a representação binaria de tal indivíuo, em nossa aplicação esse atributo é criado de maneira aleatoria, é feito o uso de uma função para a tal criação, tendo o resultado esse valor é informado no momento da criação do objeto **Subject**. Conhecendo o atributo **bit_list** é realizado a atribuição dos demais atributos, **value** é determinado através de uma conversão simples de valores binarios para valor decimal, já **x_value** é obtido utilizando o resultado de **value** atrelado à uma expressão matematica, tal expressão sera exposta a seguir. Já o valor de **fitness** é obtido através da substituição do x na função apresentada no problema pelo o valor presente em **x_value**.
+
+![Expressão X](/resource/Image/eq_x.png)
+
+Onde β representa o numero de bits presentes no atributo **bit_list**.
+
 #### Geração (Lab)
+
+A representação da população no presente codigo vem através da classe Lab, alem de trazer o conceito de população para o codigo, a classe também contem os manipuladores necessarios para o desenvolvimento de um algoritmo genetico, sendo assim a classe nucleo da solução.
+
+A classe apresenta 6 atributos, mas muitos desses atributos são gerados através de uma cadeia de execução. Primeiro temos **population_size**, esse atributo guarda o tamanho da população, ou seja, o numero de indivíduos que fazem parte de uma população.
+
+Ao instanciarmos a classe, automaticamente é atribuido um valor para o atributo **init_population**, população inicial, essa população é gerada por meio de valores randomicos no array binario de representação do individuo (classe Subject). Temos também o atributo **current_population**, esse atributo irá manter as gerações correntes a cada passo dado na criação de uma nova população.
+
+Os demais atributos mostrados na imagem a seguir são gerados por meio de chamada de metodos da propria classe, que seraão explicados melhor mais a frente.
 
 ![População e Operadores](/resource/Image/lab_class.png)
 
