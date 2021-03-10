@@ -1,11 +1,12 @@
 from entities.lab import Lab
 from utils import constants as const
+from utils import common
 def main():
-  generation_best_hist = dict()
-  generation_hist = dict()
   # number of iterations in a population
   generation_life_list = [10,20]
   for lifetime in generation_life_list:
+    generation_best_hist = dict()
+    generation_hist = dict()
     print(f'THE LIFETIME {lifetime} GENERATION STARTED')
     # Note for my self: create a const at utils.constants EXECUTIONS
     # Every different lifetime generation must be executed @EXECUTIONS times
@@ -39,6 +40,8 @@ def main():
         current_lifetime += 1
       # End While current_lifetime
     # End for I
+    common.write_best(generation_best_hist,lifetime)
+    common.write_history(generation_hist,lifetime)
   # End for lifetime
   print('=OVER=')
 
