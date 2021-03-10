@@ -16,18 +16,9 @@ def random_list():
 
 def write_best(best_history:dict,lifetime:int):
     output_file = open('outputs/lifetime'+str(lifetime)+'_best_entities.txt','w')
-    for i in range(const.EXECUTIONS):
-        best_result = get_lowerst_best_iteration(best_history,i)
-        output_file.write(f'ITERATION({i}) GEN({best_result[1]}): {best_result[0]} \n')
-    output_file.close()
-
-def get_lowerst_best_iteration(best_history, iteration):
-    data_iteration = []
     for dict_keys in best_history.keys():
-        if (dict_keys[0] == iteration):
-            data_iteration.append([best_history[dict_keys],dict_keys[1]])
-    data_iteration.sort(key=lambda x:x[0].get_fitness())
-    return data_iteration[0]
+      output_file.write(f'ITERATION({dict_keys[0]}) GEN({dict_keys[1]}): {best_history[dict_keys]} \n')
+    output_file.close()
 
 def write_history(generation_hist:dict,lifetime:int):
     for i in range(const.EXECUTIONS):
