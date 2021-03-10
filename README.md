@@ -43,7 +43,7 @@ Os parâmetros utilizados em cada uma das funções requisito de um algoritmo ge
 
 ### Saida Esperada
 
-A execução do presente código resulta em 2 tipos de saídas, ambos os tipos estarão disponibilizadas na pasta ```output```. Como saída teremos 2 arquivos contendo os melhores fitness de cada execução para cada ciclo de vida, a nomenclatura para esse tipo de arquivo é lifetime{X}_best_entities.txt, onde {X} é o ciclo de vida utilizado, também teremos um output de histórico, com todas as informações relacionadas a uma iteração de um determinado ciclo de vida, a nomenclatura para esse tipo de arquivo é iteration{X}_lifetime{Y}_historic.txt, onde {X} é a iteração utilizada e {Y} o ciclo de vida utilizado.
+A execução do presente código resulta em 2 tipos de saídas, ambos os tipos estarão disponibilizadas na pasta ```output```. Como primeiro tipo teremos 2 arquivos contendo o melhor fitness de cada geração em sua respectiva interação, a nomenclatura para esse tipo de arquivo é lifetime{X}_best_entities.txt, onde {X} é o ciclo de vida utilizado. O segundo tipo se trata de um output de histórico, com todas as informações relacionadas a uma iteração de um determinado ciclo de vida, a nomenclatura para esse tipo de arquivo é iteration{X}_lifetime{Y}_historic.txt, onde {X} é a iteração utilizada e {Y} o ciclo de vida utilizado. Por fim temos 2 arquivos, um para cara ciclo de vida utilizado, contendo a média dos valores alcançados por cada geração nas iterações performadas, a sua nomenclatura é lifetime{X}_mean.txt, onde {X} é o valor do ciclo de vida utilizado para a manipulação.
 
 ### Implementação
 
@@ -124,3 +124,8 @@ Levantado os pontos iniciais, a ordem de execução é bem simples, tarefas bás
 Apesar de toda a teoria por trás do funcionamento dos algoritmos genéticos, as saídas encontradas no problema proposto foram relativamente simples e fáceis de levantar uma análise breve.
 
 O pico de melhores fitness foi encontrado nas gerações 9 e 10, utilizando os ciclos de vida de 10 e 20 gerações. Os melhores resultados de cada interação em cada ciclo de vida pode ser encontrado em [Ciclo 10](/outputs/lifetime10_best_entities.txt) e [Ciclo 20](/outputs/lifetime20_best_entities.txt). Vale lembrar que os valores alcançados podem variar com o uso de seed para os números randômicos.
+
+Também através dos valores médios calculados podemos ver uma crescente de melhoria e logo após um ponto de estabilização, isso pode ser visto tanto quanto no ciclo de 10 gerações quanto no ciclo de 20, nesse segundo ciclo é possível notar um processamento desnecessário, uma vez que a partir da 11 geração não ocorre melhorias nos resultados alcançados.
+
+Mais informações relacionadas a média dos valores alcançados podem ser vistos a seguir nos gráficos, 10 e 20 gerações respectivamente.
+
