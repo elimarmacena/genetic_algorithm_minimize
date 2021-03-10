@@ -15,7 +15,7 @@ class Lab:
     def __init__(self):
         self.population_size = const.POPULATION_SIZE
         # the population are sorted by the fitness value
-        self.init_population = self.__create_gen(population_size)
+        self.init_population = self.__create_gen(self.population_size)
         # the current population will be used on every population manipulation
         self.current_population = self.init_population
         # selected population

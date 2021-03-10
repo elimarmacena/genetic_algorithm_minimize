@@ -71,18 +71,38 @@ Os demais atributos mostrados na imagem a seguir são gerados por meio de chamad
 
 ##### Seleção
 
+O problema proposto foi resolvido através de uma abordagem de seleção chamada campeonato, a sua ideia é bem simples, o numero de "rounds" é equivalente ao tamanho da população, neses rounds são selecionados um numero N de individuos que irão "batalhar" entre si, o individuo que melhor se sair nessa batalha irá permanecer na população.
+
+O conceito de melhor individuo pode variar por round, nem sempre o melhor valor significa o mais apto para população, as vezes o pior resultado pode ser mais interessante. Essa abordagem também nos auxilia evitar uma construção de população com os melhores resultados e assim acarretando um cenario de maximos globais e diminuindo a variedade da população.
+
+A implementação desse metodo no presente codigo pode ser visto a seguir.
+
 ![Seleção de Indivíduos](/resource/Image/selection_method.png)
 
 ##### Crossover
+
+Apos selecionados os individuos, partimos para a etapa de crossover, nessa etapa os inidividuos passam por um "novo processo de seleção" para estabelecer se sera misturada as informações de dois indivíduos ou não.
+
+Essa mistura pode ocorrer a partir de diferentes pontos do array de bits de um indivíduo, na solução desenvolvida foi utilizado a partição de 1 ponto, dessa maneira nós temos 50% de informação de cada individuo que foi selecionado para a mistura de informação. Essa mistura ocorre a partir de um determinada porcentagem estipulada, ou seja existe N% de dois individuos se misturares e gerar um novo.
+
+A implementação dessa fusão de informações é apresentada na figura a seguir e como pode ser visto, é utilizado os valores presentes no atributo **selected_population**, que é o atributo que mantei a seleção realizada na [etapa de selação](https://github.com/elimarmacena/genetic_algorithm_minimize#sele%C3%A7%C3%A3o) dos indivíduos.
 
 ![Crossover de Indivíduos](/resource/Image/crossover_method.png)
 
 ##### Mutação
 
+Visando manter o estado de variedade em uma população, os algoritmos geneticos fazem uso de mutação. Essa mutação nada mais é do que a alteração de valores presentes no array de representação de um indivíduo, assim como o crossover, essa abordagem precisa de uma determinada porcentagem para perfomar a mutação.
+
+Em nosso codigo, como trabalhamos com valores binarios no array de representação do individuo, a mutação trata apenas de uma inversão de bit. A implementação desse metodo é apresentado na imagem a seguir, cada bit do individuo deve ser analisado em uma porcentagem X de alteração, sendo assim possivel haver apenas um bit alterado em todo o array do individuo.
+
 ![Mutação de Indivíduos](/resource/Image/mutation_method.png)
 
 ##### Nova Geração
+Apos todos os processamentos em cima de uma população, o algoritmo genetico deve dar origem a uma nova população, essa nova população pode ser composta de difrentes maneiras, mas na solução proposta foi feito o uso de elitismo.
 
+A abordagem de elitismo corre quando uma parcela X dos melhores individuos geração base, antes dos processamentos, é mantida para a nova geração e então afeita a agregação dos resultados de processamento juntamente com os dados "limpos".
+
+No presente codigo é trabalhado uma população de tamanho 10, para o nosso elitismo foi estipulado 10% da população base deve ser mantida na proxima geração, ou seja 1 individo, e os outros 9 individuos devem ser selecionados após o processamento da população base, no codigo optou-se por pegar os 9 melhores fitness da população. A implementação pode ser vista na imagem a seguir.
 ![Nova Geração](/resource/Image/newgen_method.png)
 
 #### Arquivo da Aplicação(Main)

@@ -49,3 +49,5 @@ class Subject:
         fitness_result = (cos_value * self.x_value) + 2
         return fitness_result
 
+    def __str__(self):
+        return (f'BIT_LIST:{self.bit_list}; DECIMAL:{self.value}; X_VALUE: {self.x_value}; FITNESS{self.fitness}')
