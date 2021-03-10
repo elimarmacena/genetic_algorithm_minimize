@@ -34,6 +34,7 @@ def main():
       # End While current_lifetime
       print('=\t=\t=\t=\t=\t=\t=\t=\t=')
     # End for I
+    common.write_mean_bests(generation_best_hist,lifetime)
     common.write_best(generation_best_hist,lifetime)
     common.write_history(generation_hist,lifetime)
   # End for lifetime
