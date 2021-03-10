@@ -33,7 +33,9 @@ Para a solução do problema proposto foi utilizada a linguagem Python, versão 
 
 ### Execução Codigo
 
-PLACE HOLDER --- COLOCAR INFORMAÇÃO DE EXECUCAO
+O codigo foi criado utilizando suas informações de ambiente (tamanho de população, metricas e etc) utilizando um arquivo de constantes ```src/utils/constants.py```, desse modo a execução do codigo ocorre de maneira simplicada, necessario estar apenas na pasta raiz, fora da pasta src, e executar o comando na imagem abaixo
+
+![Execução Codigo](/resource/Image/code_execute.png)
 
 #### Alteração de Parametros
 
@@ -106,3 +108,18 @@ No presente codigo é trabalhado uma população de tamanho 10, para o nosso eli
 ![Nova Geração](/resource/Image/newgen_method.png)
 
 #### Arquivo da Aplicação(Main)
+
+O arquivo de execução do codigo, main, possui uma construção simples, onde é seguido apenas a ordem dos requisitos estabelecidos para o funcionamento de um algoritmo genetico.
+
+A imagem abaixo traz a função de execução, nesse codigo podemos destacar o variavel **generation_life_list**, onde temos uma lista contendo o tempo de vida (total maximo gerações) que uma população deve ter. Após isso trazemos o destaque para o loop baseado em **const.EXECUTIONS**, valor utiliado para estabelecer a quantidade de vezes que um mesmo ciclo de vida deve ser executado, esse valor tambem pode ser alterado no arquivo de constantes, juntamente com os demais valores presentes no arquivo.
+
+![Arquivo da Aplicação](resource/Image/main_method.png)
+
+Levantado os ponto iniciais, a ordem de execução é bem simples, tarefas basicas de algoritmo genetico ocorrem e suas saidas sao salvas em arquivos. Vale salientar que gerações escritas no arquivo com o valor -1 representam a geração inicial.
+
+
+## Resultados
+
+Apesar de toda teoria por traz do funcionamento dos algoritmos geneticos, as saidas encontradas no problema proposto foram relativamente simples e faceis de levantar uma analise breve.
+
+O pico de melhores fitness foram encontrados nas gerações 9 e 10, utilizando os ciclos de vida de 10 e 20 gerações. Os melhores resultados de cada interação de cada ciclo de vida pode ser encontrado em [Ciclo 10](/outputs/lifetime10_best_entities.txt) e [Ciclo 20](/outputs/lifetime20_best_entities.txt). Vale lembrar que os valores alcançados podem variar com o uso de seed para os numeros randomicos.
