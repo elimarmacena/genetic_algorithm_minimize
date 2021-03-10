@@ -41,3 +41,17 @@ def write_history(generation_hist:dict,lifetime:int):
         # End for dict_keys
         output_file.close()
     # End for i
+
+def write_mean_bests(best_history:dict,lifetime:int):
+  output_file = open('outputs/lifetime'+str(lifetime)+'_mean.txt','w')
+  mean_results = dict()
+  for i in range(lifetime):
+    generation_sum = 0
+    for dict_keys in best_history.keys():
+      if(dict_keys[1] == i):
+        generation_sum += best_history[dict_keys].get_fitness()
+      # End IF
+    # End FOR dict_keys
+    output_file.write(f'GENERATION[{i}]: {generation_sum/const.EXECUTIONS}\n')
+  # End FOR i
+  output_file.close
