@@ -16,34 +16,29 @@ def main():
       # during our population creation the fitness is calculated
       population = Lab()
       fitness_population_text = ''.join(str(h.get_fitness())+'; ' for h in population.get_init_population())
-      print(f'** INITIAL POPULATION FITNESS:{fitness_population_text}')
       generation_best_hist[(i,-1)]=population.get_best_fitness()
       generation_hist[(i,-1)]=population.get_init_population()
       current_lifetime = 0
       while current_lifetime < lifetime:
-        print(f'** GENERATION {current_lifetime} ARE BEING CREATED')
         # Performing the selection
-        print('*** Performing the Selection')
         population.championship()
         # Performing the crossover
-        print('*** Performing the Crossover')
         population.crossover()
         # Performing the mutation
-        print('*** Performing the Mutation')
         population.mutation()
         # Creating a new generation
-        print('*** Finished the Generation Creation')
         new_gen = population.create_new_gen()
         generation_best_hist[(i,current_lifetime)]=population.get_best_fitness()
         generation_hist[(i,current_lifetime)]=population.get_current_population()
-        print('========================')
         current_lifetime += 1
       # End While current_lifetime
+      print('=\t=\t=\t=\t=\t=\t=\t=\t=')
     # End for I
     common.write_best(generation_best_hist,lifetime)
     common.write_history(generation_hist,lifetime)
   # End for lifetime
-  print('=OVER=')
+  print('=\t\t\t\tFINISHED\t\t\t=')
+  print('Please Check The Output Folder')
 
 
 
